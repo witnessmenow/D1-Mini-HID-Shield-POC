@@ -1,17 +1,19 @@
-# CH55xOneClickCompiler
-This Compile example is Compatible with the WCH CH551, CH552, CH553 and CH554 Microcontroller(https://lcsc.com/products/WCH_11013.html) and uses the SDCC(http://sdcc.sourceforge.net/) open source compiler.
+# Aarons HID example
 
-The Example itself will just toggle every pin of the CH55x Microcontroller.
+This is the code that Aaron went through in [this video](https://www.youtube.com/watch?v=cSYMe4xyGeo).
+[![YoutubeVideo](https://img.youtube.com/vi/cSYMe4xyGeo/0.jpg)](https://www.youtube.com/watch?v=cSYMe4xyGeo)
 
-for an CH559 Example see here:(https://github.com/atc1441/CH559sdccUSBHost)
+This example has two LEDs and two touch inputs.
 
-# This is made to get quickly started no need to install any software.
-Just open Compile.bat and it will compile your project with the included SDCC, after that it will also try to flash the CH55x Chip via usb with my Python chflasher(https://github.com/atc1441/chflasher), install the Zadig(https://zadig.akeo.ie/) driver for the flashing.
+LED on P3.0 -- Blink every 40ms
+LED on P3.1 -- Bound to NUM Lock of your keyboard (will light when numlock is on)
 
-If you want to add additional .c files also add them to the Compile.bat, my suggestion is to make one copy of the whole folder per project. 
+Touch input on TIN2 -- Enter bootloader mode
+Touch input on TIN3 -- Type out a message
 
+# To run this example
 
-Explanation video of the CH55x Microcontroller:(click on it)
-
-[![YoutubeVideo](https://img.youtube.com/vi/IDCQNa2ywiM/0.jpg)](https://www.youtube.com/watch?v=IDCQNa2ywiM)
-
+- Download Aaron's One Click Compiler project: https://github.com/atc1441/CH55xOneClickCompiler
+- Copy the `SDCC\bin` folder into the `SDCC` folder of this project.
+- If you haven't already, use [Zadig](https://zadig.akeo.ie/) to install the libusb-win32 driver while the CH552 is in bootloader mode
+- Put the CH552 into bootloader mode and double click `compile.bat`
